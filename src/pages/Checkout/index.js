@@ -32,40 +32,31 @@ const Checkout = () => {
                             <div className="col-5 pl-0">
                                 <input
                                     type="text"
-                                    placeholder="UF"
+                                    placeholder="Logradouro"
                                     className="form-control form-control-lg"
                                 />
                             </div>
 
                         </div>
                         <div className="row mb-3">
-                            <div className="col-7">
+                            <div className="col-6">
                                 <input
                                     type="text"
                                     placeholder="Logradouro"
                                     className="form-control form-control-lg"
                                 />
                             </div>
-                            <div className="col-5 pl-0">
+                            <div className="col-4 pl-0">
                                 <input
                                     type="text"
                                     placeholder="Número"
                                     className="form-control form-control-lg"
                                 />
                             </div>
-                        </div>
-                        <div className="row mb-3">
-                            <div className="col-6">
+                            <div className="col-2 pl-0">
                                 <input
                                     type="text"
-                                    placeholder="Bairro"
-                                    className="form-control form-control-lg"
-                                />
-                            </div>
-                            <div className="col-6 pl-0">
-                                <input
-                                    type="text"
-                                    placeholder="Complemento"
+                                    placeholder="Número"
                                     className="form-control form-control-lg"
                                 />
                             </div>

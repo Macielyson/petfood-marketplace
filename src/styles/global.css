@@ -3,9 +3,9 @@
 
 /*declarando a variavel no css*/
 :root {
-    --primary: #06d6a0;
+    --primary: 6, 214, 160;
     /*nome da variavel e cor*/
-    --secondary: #FA643D;
+    --secondary: 250, 100, 61;
 }
 
 /*Esse é padrao de todos os projetos*/
@@ -45,8 +45,9 @@ input[type='tel']:disabled {
 .btn {
     font-size: 15px;
 }
+
 .bg-primary {
-    background-color: var(--primary) !important;
+    background-color: rgb(var(--primary)) !important;
 }
 
 .btn-primary,
@@ -54,12 +55,12 @@ input[type='tel']:disabled {
 .btn-primary:active,
 .btn-primary:disabled,
 .btn-primary:hover {
-    background-color: var(--primary) !important;
-    border-color: var(--primary);
+    background-color: rgb(var(--primary)) !important;
+    border-color: rgb(var(--primary));
 }
 
 .bg-secondary {
-    background-color: var(--secondary) !important;
+    background-color: rgb(var(--secondary)) !important;
 }
 
 .btn-secondary,
@@ -67,17 +68,30 @@ input[type='tel']:disabled {
 .btn-secondary:active,
 .btn-secondary:disabled,
 .btn-secondary:hover {
-    background-color: var(--secondary) !important;
-    border-color: var(--secondary);
+    background-color: rgb(var(--secondary)) !important;
+    border-color: rgb(var(--secondary));
 }
 
 
 .bg-primary {
     /*pegando a variavel. sobrescrevendo a primare do bootstrap*/
-    background-color: var(--primary) !important;
+    background-color: rgb(var(--primary)) !important;
 
 }
+/*estilo para as badge*/
+.badge {
+    font-weight: lighter;
 
+}
+.badge.badge-primary {
+    background: rgba(var(--primary), 0.1);
+    color: rgba(var(--primary));
+}
+
+.badge.badge-secondary {
+    background: rgba(var(--secondary), 0.1);
+    color: rgba(var(--secondary));
+}
 .box {
     display: inline-block;
     padding: 30px;
