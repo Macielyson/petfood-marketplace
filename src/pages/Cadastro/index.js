@@ -10,7 +10,7 @@ const Cadastro = () => {
         //h-100 -> 100 na vertical. colocar tambem no root do index public
         <div className="container-fuid h-100 bg-primary">
 
-            <Header whiteVersion />
+            <Header whiteVersion hiderCart/>
 
             <div className="row">
                 {/*my-auto -> centro vertical da tela. text-right ->alinha a direita*/}

@@ -63,6 +63,10 @@ input[type='tel']:disabled {
     background-color: rgb(var(--secondary)) !important;
 }
 
+.btn-secondary.rounded-circle {
+    padding: 5px 14px;
+}
+
 .btn-secondary,
 .btn-secondary:focus,
 .btn-secondary:active,
@@ -78,11 +82,13 @@ input[type='tel']:disabled {
     background-color: rgb(var(--primary)) !important;
 
 }
+
 /*estilo para as badge*/
 .badge {
     font-weight: lighter;
 
 }
+
 .badge.badge-primary {
     background: rgba(var(--primary), 0.1);
     color: rgba(var(--primary));
@@ -92,6 +98,7 @@ input[type='tel']:disabled {
     background: rgba(var(--secondary), 0.1);
     color: rgba(var(--secondary));
 }
+
 .box {
     display: inline-block;
     padding: 30px;
