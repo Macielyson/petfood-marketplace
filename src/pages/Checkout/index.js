@@ -1,7 +1,8 @@
 import React from "react";
-import "./styles.css"
+import _ from 'underscore';
 import Header from "../../components/Header";
 import Product from "../../components/Product/List";
+import "./styles.css"
 
 const Checkout = () => {
     return (

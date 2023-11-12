@@ -1,12 +1,17 @@
 import React from 'react';
-import './styles.css';
-
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { Dock } from "react-dock";
 import Product from "../Product/List";
+import './styles.css';
 
 const Sidebar = () => {
-
+    const history = useHistory();
+    const { cart } = useSelector((state) => state.shop);
+    const total = cart.reduce((total, product) => {
+        return total + product.preco;
+    }, 0);
     const [opened, setOpened] = useState(false);
 
     useEffect(() => {
@@ -23,9 +28,11 @@ const Sidebar = () => {
             onVisibleChange={(visible) => { setOpened(visible) }}
         >
             <div className='container-fluid h-100 pt-4 sidebar'>
-                <h5>Minha sacola (5) </h5>
+                <h5>Minha sacola ({cart.length}) </h5>
                 <div className='row products'>
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((p) => (<Product />))}
+                    {cart.map((p) => (
+                        <Product product={p} />
+                    ))}
                 </div>
 
                 <div className='row align-items-end footer'>
@@ -34,16 +41,18 @@ const Sidebar = () => {
                             Total
                         </b>
                         <h3 className='d-inline-block'>
-                            R$ 90,00
+                            R$ {total.toFixed(2)}
                         </h3>
                     </div>
-                    <button className='btn btn-block btn-lg btn-primary rounded-0 h-50 align-items-center'>
+                    <button
+                        onClick={() => history.push('/cadastro')}
+                        className='btn btn-block btn-lg btn-primary rounded-0 h-50 align-items-center'>
                         Finalizar compra
                     </button>
                 </div>
             </div>
         </Dock>
     );
-}
+};
 
 export default Sidebar;

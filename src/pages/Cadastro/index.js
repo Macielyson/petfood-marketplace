@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-
+import { setCustomer as setStoreCustmer } from "../../store/modules/shop/actions";
+import { Link } from "react-router-dom";
+import Header from '../../components/Header';
 import Illustration from '../../assets/illustration.png';
 
-import Header from '../../components/Header';
-
-
 const Cadastro = () => {
-
+    const dispatch = useDispatch(); // ele dispara a action para o reducer(envia os dados para o reducer).
 
 
     const [customer, setCustomer] = useState({
-
         // colocar os dados em branco o qual vai ser substituidos
         external_id: new Date().getTime().toString(), // gerar um codigo unico
         name: "",
@@ -24,13 +22,10 @@ const Cadastro = () => {
                 number: ""
             }
         ],
-        phone_numbers: [
-            ""
-        ],
+        phone_numbers: [""],
         birthday: ""
     });
 
-    const dispatch = useDispatch(); // ele dispara a action para o reducer(envia os dados para o reducer).
 
     const goToCheChekout = () => {
         dispatch(setCustomer(customer));
@@ -52,7 +47,8 @@ const Cadastro = () => {
                 </div>
                 <div className="col-6 text-center">
                     <div className="box col-8">
-                        <h3 className="text-center">Falta pouco pra fazer o seu pet feliz.</h3>
+                        <h2 className="text-center">Falta pouco pra fazer o seu pet feliz.</h2>
+                        <br />
                         <br />
                         <input
                             type="text"
@@ -101,18 +97,17 @@ const Cadastro = () => {
                                 setCustomer({ ...customer, birthday: e.target.value });
                             }}
                         />
-                        <button
+                        <Link to="/checkout"
+                            onClick={() => goToCheChekout()}
                             className="btn btn-lg btn-block btn-secondary "
-                            onClick={goToCheChekout}
                         >
                             Finalizar pedido
-                        </button>
+                        </Link>
                     </div>
                 </div>
-
             </div>
         </div>
     );
-}
+};
 
 export default Cadastro;

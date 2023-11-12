@@ -1,20 +1,30 @@
 import React from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleCartProduct } from '../../../store/modules/shop/actions';
 import './styles.css';
 
-const Product = () => {
-    return (
-        <div className="product col-3">
-            <img src="https://m.media-amazon.com/images/I/81h7AIrhP-L._AC_SY879_.jpg"
-                className="img-fluid align-center" />
-            <button className="btn btn-primary rounded-circle">+</button>
-            <h4>
-                <label className="badge badge-primary">R$ 90,00</label>
-            </h4>
-            <small>
-                <b>Ração Magnus Todo Dia Sabor Carne para Cães Adultos - 15 Kg</b>
-            </small>
-        </div>
-    );
-}
+const Product = ({ product }) => {
+
+    const Product = ({ product }) => {
+        const dispatch = useDispatch();
+        const { cart } = useSelector((state) => state.shop);
+        const added = cart.findIndex((p) => p._id === product._id) !== -1;
+
+        return (
+            <div className="product col-3">
+                <img src={product.capa}
+                    className="img-fluid align-center" />
+                <button onClick={() => dispatch(toggleCartProduct(product))}
+                    className={`btn btn-${added ? 'secondary' : 'primary'} rounded-circle`}> {added ? '-' : '+'}</button>
+                <h4>
+                    <label className="badge badge-primary">R$ {product.preco.toFixed(2)}</label>
+                </h4>
+                <small>
+                    <b>{product.nome}</b>
+                </small>
+            </div>
+        );
+    };
+};
 
 export default Product;
