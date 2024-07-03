@@ -1,0 +1,26 @@
+npx create-react-app web -> cria o projeto
+yarn start -> iniciar o projeto
+
+** react-dock atualizado
+react-docker: para fazer a sadbar, um modulo interesante.:https://github.com/alexkuz/react-dock
+yarn add react-doc
+
+** atualizado
+
+yarn add google-map-react.:https://www.npmjs.com/package/google-map-react
+
+yarn react-router-dom: https://www.npmjs.com/package/react-router-dom
+
+
+**Terceiro Video do curso**
+
+yarn add redux react-redux, 
+https://redux.js.org/introduction/getting-started. 
+
+instalar a extençao do redux DevTools no google e no app
+yarn add redux-devtools-extension
+https://github.com/reduxjs/redux-devtools
+https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?pli=1
+
+intalar o redux-saga
+$ yarn add redux-saga

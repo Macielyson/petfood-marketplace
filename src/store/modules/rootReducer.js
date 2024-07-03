@@ -1,9 +1,7 @@
-// responsavel mesclas os reducer para utilizar em um so
 import { combineReducers } from 'redux';
-import shop from './shop/reducer';
 
-const reduce = combineReducers({
-    shop: shop,
+import shop from '../modules/shop/reducer';
+
+export default combineReducers({
+  shop: shop,
 });
-
-export default reduce;

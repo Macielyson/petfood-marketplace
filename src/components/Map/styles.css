@@ -1,4 +1,3 @@
 .container-map {
-    /*94 do header*/
-    height: calc(100% - 94px);
+  height: calc(100% - 94px);
 }

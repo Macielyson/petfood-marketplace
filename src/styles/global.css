@@ -1,53 +1,54 @@
-/*arquivo de css global*/
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
-/*declarando a variavel no css*/
 :root {
-    --primary: 6, 214, 160;
-    /*nome da variavel e cor*/
-    --secondary: 250, 100, 61;
+  --primary: 6, 214, 160;
+  --secondary: 250, 100, 61;
 }
 
-/*Esse é padrao de todos os projetos*/
+/*padrao dos projetos*/
 html,
 body {
-    height: 100%;
-    overflow-x: hidden;
-    font-family: 'Open Sans';
-    letter-spacing: -0.03em;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Open Sans';
+  letter-spacing: -0.03em;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'] {
+  font-size: 15px;
 }
 
 input[type='text'],
 input[type='email'],
 input[type='password'],
 input[type='date'],
-input[type='tel'] {
-    font-size: 15px;
-}
-
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
-input[type='tel'],
 input[type='text']:disabled,
 input[type='email']:disabled,
 input[type='password']:disabled,
-input[type='date']:disabled,
-input[type='tel']:disabled {
-    border-radius: 3px;
-    border: 0.5px solid #DCDCDC;
-    background: #F6F5F5;
-    outline: none;
-    color: #626264;
+input[type='date']:disabled {
+  background: #f6f5f5;
+  border: 0.5px solid #dcdcdc;
+  outline: none;
+  color: #626264;
 }
 
 .btn {
-    font-size: 15px;
+  font-size: 15px;
+}
+
+.btn-secondary.rounded-circle {
+  padding: 6px 14px;
 }
 
 .bg-primary {
-    background-color: rgb(var(--primary)) !important;
+  background-color: rgb(var(--primary)) !important;
+}
+
+.bg-secondary {
+  background-color: rgb(var(--secondary)) !important;
 }
 
 .btn-primary,
@@ -55,16 +56,8 @@ input[type='tel']:disabled {
 .btn-primary:active,
 .btn-primary:disabled,
 .btn-primary:hover {
-    background-color: rgb(var(--primary)) !important;
-    border-color: rgb(var(--primary));
-}
-
-.bg-secondary {
-    background-color: rgb(var(--secondary)) !important;
-}
-
-.btn-secondary.rounded-circle {
-    padding: 5px 14px;
+  background-color: rgb(var(--primary)) !important;
+  border-color: rgb(var(--primary));
 }
 
 .btn-secondary,
@@ -72,37 +65,32 @@ input[type='tel']:disabled {
 .btn-secondary:active,
 .btn-secondary:disabled,
 .btn-secondary:hover {
-    background-color: rgb(var(--secondary)) !important;
-    border-color: rgb(var(--secondary));
+  background-color: rgb(var(--secondary)) !important;
+  border-color: rgb(var(--secondary));
 }
-
 
 .bg-primary {
-    /*pegando a variavel. sobrescrevendo a primare do bootstrap*/
-    background-color: rgb(var(--primary)) !important;
-
+  background-color: rgb(var(--primary)) !important;
 }
 
-/*estilo para as badge*/
 .badge {
-    font-weight: lighter;
-
+  font-weight: lighter;
 }
 
 .badge.badge-primary {
-    background: rgba(var(--primary), 0.1);
-    color: rgba(var(--primary));
+  background: rgba(var(--primary), 0.1);
+  color: rgb(var(--primary));
 }
 
 .badge.badge-secondary {
-    background: rgba(var(--secondary), 0.1);
-    color: rgba(var(--secondary));
+  background: rgba(var(--secondary), 0.1);
+  color: rgb(var(--secondary));
 }
 
 .box {
-    display: inline-block;
-    padding: 30px;
-    border-radius: 5px;
-    background: #FFF;
-    box-shadow: 0px 0px 11px 6px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  box-shadow: 0px 0px 11px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  display: inline-block;
+  padding: 50px;
 }

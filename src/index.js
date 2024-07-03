@@ -1,14 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import '../src/styles/global.css';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import Routes from './MyRoutes';
+import Teste from './pages/teste';
+import Sidebar from './components/sidebar';
+import { BrowserRouter } from 'react-router-dom';
 
-import { Provider } from 'react-redux'; // ele vai provisionar toda a store todos componetes paginas
-import store from './store'; // ele vai pegar index.js
-import Router from './router';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <Provider store={store}>
-    <Router />
-  </Provider>
+    <Routes />
+  </Provider>,
+  document.getElementById('root')
 );
